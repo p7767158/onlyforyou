@@ -6,17 +6,23 @@
 //  Copyright © 2016年 honghao5. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "HLAppDelegate.h"
+#import "HLCashNoteViewController.h"
 
-@interface AppDelegate ()
+@interface HLAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation HLAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:ScreenBounds];
+    self.window.backgroundColor = [HLColor whiteColor];
+    self.window.rootViewController = [[HLNavigationViewController alloc] initWithRootViewController:[[HLCashNoteViewController alloc] init]];
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
