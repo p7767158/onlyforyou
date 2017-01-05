@@ -8,6 +8,6 @@
 
 #import "HLBaseViewController.h"
 
-@interface HLCashNoteViewController : HLBaseViewController
+@interface HLOrderListViewController : HLBaseViewController
 
 @end

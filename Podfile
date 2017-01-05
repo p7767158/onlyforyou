@@ -7,5 +7,6 @@ pod 'YYModel'
 pod 'FMDB'
 pod 'ReactiveCocoa', '~> 2.1.8'
 pod 'Masonry'
+pod 'libextobjc'
 
 end
