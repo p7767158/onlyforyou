@@ -6,13 +6,13 @@
 //  Copyright © 2017年 honghao5. All rights reserved.
 //
 
-#import "HLCashNoteViewController.h"
+#import "HLOrderListViewController.h"
 
-@interface HLCashNoteViewController ()
+@interface HLOrderListViewController ()
 
 @end
 
-@implementation HLCashNoteViewController
+@implementation HLOrderListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

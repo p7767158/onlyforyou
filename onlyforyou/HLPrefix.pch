@@ -15,6 +15,7 @@
 //Pods
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <Masonry/Masonry.h>
+#import <libextobjc/EXTScope.h>
 
 //Basic
 #import "HLAppDelegate.h"
