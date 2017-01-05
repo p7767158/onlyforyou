@@ -7,7 +7,8 @@
 //
 
 #import "HLAppDelegate.h"
-#import "HLCashNoteViewController.h"
+#import "HLOrderListViewController.h"
+#import "HLSession.h"
 
 @interface HLAppDelegate ()
 
@@ -18,9 +19,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    [[HLSession sharedHLSession] restore];
+    
     self.window = [[UIWindow alloc] initWithFrame:ScreenBounds];
     self.window.backgroundColor = [HLColor whiteColor];
-    self.window.rootViewController = [[HLNavigationViewController alloc] initWithRootViewController:[[HLCashNoteViewController alloc] init]];
+    self.window.rootViewController = [[HLNavigationViewController alloc] initWithRootViewController:[[HLOrderListViewController alloc] init]];
     [self.window makeKeyAndVisible];
     
     return YES;
