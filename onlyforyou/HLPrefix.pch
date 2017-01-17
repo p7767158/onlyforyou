@@ -16,6 +16,7 @@
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <Masonry/Masonry.h>
 #import <libextobjc/EXTScope.h>
+#import <YYModel/YYModel.h>
 
 //Basic
 #import "HLAppDelegate.h"
@@ -25,5 +26,6 @@
 #import "HLMacro.h"
 #import "HLColor.h"
 #import "HLFont.h"
+#import "HLGlobal.h"
 
 #endif /* HLPrefix_pch */

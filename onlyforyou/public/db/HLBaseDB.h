@@ -18,7 +18,7 @@ typedef void (^WriteFinishBlock)(long long lastId);
 - (void)setDB:(NSString *)path;
 - (void)run;
 - (void)doRead:(NSString *)sql withParams:(NSDictionary *)dictParams finishBlock:(ReadFinishBlock)block;
-- (void)doSyncRead:(NSString *)sql withParams:(NSDictionary *)dictParams finishBlock:(ReadFinishBlock)block;
+- (NSArray *)doSyncRead:(NSString *)sql withParams:(NSDictionary *)dictParams;
 - (void)doWrite:(NSString *)sql withParams:(NSDictionary *)dictParams finishBlock:(WriteFinishBlock)block;
 - (void)doSyncWrite:(NSString *)sql withParams:(NSDictionary *)dictParams finishBlock:(WriteFinishBlock)block;
 

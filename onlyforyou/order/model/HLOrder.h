@@ -17,4 +17,11 @@
 @property (nonatomic, assign) long updateTime;
 @property (nonatomic, assign) double money;
 
+- (void)create:(HLSuccessBlock)finishBlock;
+- (void)update:(HLSuccessBlock)finishBlock;
+- (void)delete:(HLSuccessBlock)finishBlock;
+
++ (RACSignal *)fetchOrderList;
++ (RACSignal *)fetchOrderSum;
+
 @end

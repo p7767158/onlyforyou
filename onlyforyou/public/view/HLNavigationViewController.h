@@ -10,4 +10,6 @@
 
 @interface HLNavigationViewController : UINavigationController
 
+- (void)showAlertWithMessage:(NSString *)message;
+
 @end

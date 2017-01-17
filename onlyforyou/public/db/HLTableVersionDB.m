@@ -41,7 +41,9 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(HLTableVersionDB);
         }
         [dbh close];
     }
-    finishBlock(ret);
+    if (finishBlock) {
+        finishBlock(ret);
+    }
 }
 
 - (void)getVersionForTbl:(NSString *)tbl inDB:(NSString *)db finishBlock:(void(^)(int version))finishBlock
@@ -50,7 +52,9 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(HLTableVersionDB);
     if ([dbh open]) {
         FMResultSet *res = [dbh executeQuery:[NSString stringWithFormat:@"SELECT version FROM %@ WHERE db=:db AND tbl=:tbl", kVersionTbl] withParameterDictionary:@{@"db":db, @"tbl":tbl}];
         if ([res next]) {
-            finishBlock([[res resultDictionary][@"version"] intValue]);
+            if (finishBlock) {
+                finishBlock([[res resultDictionary][@"version"] intValue]);
+            }
         } else {
             finishBlock(0);
         }

@@ -10,4 +10,8 @@
 
 @interface HLFont : NSObject
 
++ (UIFont *)fontWithSize:(CGFloat)fontSize;
++ (UIFont *)titleFont;
+
+
 @end

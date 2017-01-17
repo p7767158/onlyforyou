@@ -9,8 +9,12 @@
 #import "HLSession.h"
 #import "HLTableVersionDB.h"
 #import "HLOrderDB.h"
+#import "HLEventDB.h"
+#import "HLEvent.h"
 
-static NSString * const kUserDB = @"kUserDB";
+static NSString *const kUserDefaults = @"kUserDefaults";
+
+static NSString *const kUserDB = @"kUserDB";
 static int const kDefaultUid = 0;
 
 @interface HLSession ()
@@ -66,6 +70,46 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(HLSession);
     }
     [[HLTableVersionDB sharedHLTableVersionDB] initStore:_storePath[kUserDB]];
     [[HLOrderDB sharedHLOrderDB] initStore:_storePath[kUserDB]];
+    [[HLEventDB sharedHLEventDB] initStore:_storePath[kUserDB]];
+}
+
+- (NSArray *)events
+{
+    if (!_events) {
+        _events = [HLEvent events];
+    }
+    
+    if (_events.count <= 0) {
+        _events = @[@{@"rank":@0, @"desc":@"吃饭"}, @{@"rank":@1, @"desc":@"打车"}, @{@"rank":@2, @"desc":@"买菜"}, @{@"rank":@3, @"desc":@"超市"}, @{@"rank":@4, @"desc":@"公交"}, @{@"rank":@5, @"desc":@"淘宝"}];
+    }
+    
+    _events = [[[_events rac_sequence] map:^id(NSDictionary *value) {
+        return [HLEvent yy_modelWithDictionary:value];
+    }] array];
+    return _events;
+}
+
+- (void)setUserDefault:(id)value forKey:(NSString *)key
+{
+    NSMutableDictionary *defaults = [[[NSUserDefaults standardUserDefaults] objectForKey:kUserDefaults] mutableCopy];
+    if (!defaults) {
+        defaults = @{}.mutableCopy;
+    }
+    
+    if (nil != value) {
+        defaults[key] = value;
+    } else {
+        [defaults removeObjectForKey:key];
+    }
+    
+    [[NSUserDefaults standardUserDefaults] setObject:defaults forKey:kUserDefaults];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (id)userDefaultForKey:(NSString *)key
+{
+    NSDictionary *defaults = [[NSUserDefaults standardUserDefaults] objectForKey:kUserDefaults];
+    return defaults[key];
 }
 
 @end

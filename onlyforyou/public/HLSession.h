@@ -10,7 +10,12 @@
 
 @interface HLSession : NSObject
 
+@property (nonatomic, strong) NSArray *events;
+
 + (HLSession *)sharedHLSession;
 - (void)restore;
+
+- (void)setUserDefault:(id)value forKey:(NSString *)key;
+- (id)userDefaultForKey:(NSString *)key;
 
 @end

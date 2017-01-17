@@ -17,4 +17,10 @@ static NSString * const kOrderTbl = @"hl_order";
 + (HLOrderDB *)sharedHLOrderDB;
 - (void)initStore:(NSString *)baseUrl;
 
+- (void)create:(HLOrder *)order finish:(HLSuccessBlock)finishBlock;
+- (void)update:(HLOrder *)order finish:(HLSuccessBlock)finishBlock;
+- (void)deleteWithOid:(long long)oid finish:(HLSuccessBlock)finishBlock;
+- (void)getOrderList:(void(^)(NSArray *))finishBlock;
+- (void)getOrderSum:(void(^)(NSArray *))finishBlock;
+
 @end

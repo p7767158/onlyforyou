@@ -12,4 +12,9 @@
 
 + (UIColor *)whiteColor;
 
++ (UIColor *)navigationColor;
+
++ (UIColor *)darkTextColor;
++ (UIColor *)redColor;
+
 @end

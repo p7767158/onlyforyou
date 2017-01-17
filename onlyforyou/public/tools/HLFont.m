@@ -10,4 +10,14 @@
 
 @implementation HLFont
 
++ (UIFont *)fontWithSize:(CGFloat)fontSize
+{
+    return [UIFont systemFontOfSize:fontSize];
+}
+
++ (UIFont *)titleFont
+{
+    return [HLFont fontWithSize:16];
+}
+
 @end

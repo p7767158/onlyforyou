@@ -10,4 +10,7 @@
 
 @interface HLBaseViewController : UIViewController
 
+- (void)setNavigationAlpha:(CGFloat)alpha;
+- (void)showAlertWithMessage:(NSString *)message;
+
 @end

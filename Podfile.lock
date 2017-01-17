@@ -38,31 +38,35 @@ PODS:
   - libextobjc/RuntimeExtensions (0.4.1)
   - libextobjc/UmbrellaHeader (0.4.1)
   - Masonry (1.0.2)
-  - ReactiveCocoa (2.1.8):
-    - ReactiveCocoa/Core (= 2.1.8)
-    - ReactiveCocoa/no-arc (= 2.1.8)
-  - ReactiveCocoa/Core (2.1.8):
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
     - ReactiveCocoa/no-arc
-  - ReactiveCocoa/no-arc (2.1.8)
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
+    - ReactiveCocoa/Core
   - RKDropdownAlert (0.3.0)
+  - SCLAlertView-Objective-C (1.0.6)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
   - FMDB
   - libextobjc
   - Masonry
-  - ReactiveCocoa (~> 2.1.8)
+  - ReactiveCocoa (~> 2.5)
   - RKDropdownAlert (~> 0.3.0)
+  - SCLAlertView-Objective-C (~> 1.0.6)
   - YYModel
 
 SPEC CHECKSUMS:
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
-  ReactiveCocoa: f89f2e009a87951b50321bf9feb958823fcc617e
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   RKDropdownAlert: f4b3364c251829ad439dc666836a1f2dad26f4c7
+  SCLAlertView-Objective-C: ca78280817e66e74366b78579350dee2ff277e23
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: a98a3f2e979fdb9776f30a5642c4d4dcd2448355
+PODFILE CHECKSUM: 1b214f77109e6e072a927087b8f39a56edc9a59d
 
 COCOAPODS: 1.1.1

@@ -47,7 +47,7 @@
     });
 }
 
-- (void)doSyncRead:(NSString *)sql withParams:(NSDictionary *)dictParams finishBlock:(ReadFinishBlock)block
+- (NSArray *)doSyncRead:(NSString *)sql withParams:(NSDictionary *)dictParams
 {
     FMDatabase *db = [[FMDatabase alloc] initWithPath:_path];
     [db open];
@@ -57,7 +57,7 @@
         [ret addObject:[res resultDictionary]];
     }
     [db close];
-    block(ret);
+    return ret;
 }
 
 - (void)doWrite:(NSString *)sql withParams:(NSDictionary *)dictParams finishBlock:(WriteFinishBlock)block
@@ -86,7 +86,9 @@
         lastId = -db.lastErrorCode;
     }
     [db close];
-    block(lastId);
+    if (block) {
+        block(lastId);
+    }
 }
 
 @end
