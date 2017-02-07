@@ -34,13 +34,15 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(HLEventDB);
             [db close];
         }
         
-        FMDatabaseQueue *queue = [FMDatabaseQueue databaseQueueWithPath:path];
-        [queue inDatabase:^(FMDatabase *db) {
-            for (HLEvent *event in [[HLSession sharedHLSession] events]) {
-                [db executeUpdate:[NSString stringWithFormat:@"INSERT INTO %@ (desc, rank) VALUES (:desc, :rank)", kEventTbl] withParameterDictionary:@{@"desc":event.desc, @"rank":@(event.rank)}];
-            }
-        }];
-        [queue close];
+        if (!versions || !versions[kEventTbl] || (kTblVersionEvent > [versions[kEventTbl] integerValue])) {
+            FMDatabaseQueue *queue = [FMDatabaseQueue databaseQueueWithPath:path];
+            [queue inDatabase:^(FMDatabase *db) {
+                for (HLEvent *event in [[HLSession sharedHLSession] events]) {
+                    [db executeUpdate:[NSString stringWithFormat:@"INSERT INTO %@ (desc, rank) VALUES (:desc, :rank)", kEventTbl] withParameterDictionary:@{@"desc":event.desc, @"rank":@(event.rank)}];
+                }
+            }];
+            [queue close];
+        }
         
         static dispatch_once_t onceToken;
         dispatch_once(&onceToken, ^{
@@ -52,7 +54,26 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(HLEventDB);
 
 - (NSArray *)getEvents
 {
-    return [self doSyncRead:[NSString stringWithFormat:@"SELECT * FROM %@ ORDER BY rank", kEventTbl] withParams:@{}];
+    return [self doSyncRead:[NSString stringWithFormat:@"SELECT * FROM %@ WHERE hide=:hide ORDER BY rank", kEventTbl] withParams:@{@"hide":@(0)}];
+}
+
+- (NSArray *)getHideEvents
+{
+    return [self doSyncRead:[NSString stringWithFormat:@"SELECT * FROM %@ WHERE hide=:hide ORDER BY rank", kEventTbl] withParams:@{@"hide":@(1)}];
+}
+
+- (void)updateHideOfEvent:(HLEvent *)event
+{
+    [self doWrite:[NSString stringWithFormat:@"UPDATE %@ SET hide=:hide WHERE eid=:eid", kEventTbl] withParams:@{@"hide":@(event.hide == YES ? 1 : 0), @"eid":@(event.eid)} finishBlock:^(long long lastId) {
+        
+    }];
+}
+
+- (void)updateRankOfEvent:(HLEvent *)event
+{
+    [self doWrite:[NSString stringWithFormat:@"UPDATE %@ SET rank=:rank WHERE eid=:eid", kEventTbl] withParams:@{@"rank":@(event.rank), @"eid":@(event.eid)} finishBlock:^(long long lastId) {
+        
+    }];
 }
 
 @end

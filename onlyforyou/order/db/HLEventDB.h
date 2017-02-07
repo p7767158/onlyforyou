@@ -11,11 +11,16 @@
 static NSString * const kEventDB = @"event.db";
 static NSString * const kEventTbl = @"hl_event";
 
+@class HLEvent;
 @interface HLEventDB : HLBaseDB
 
 + (HLEventDB *)sharedHLEventDB;
 - (void)initStore:(NSString *)baseUrl;
 
 - (NSArray *)getEvents;
+- (NSArray *)getHideEvents;
+
+- (void)updateHideOfEvent:(HLEvent *)event;
+- (void)updateRankOfEvent:(HLEvent *)event;
 
 @end

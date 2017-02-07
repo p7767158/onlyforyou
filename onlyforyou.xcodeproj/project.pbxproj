@@ -32,6 +32,7 @@
 		D2BDCE161E1E3CC10010FD6E /* HLOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = D2BDCE131E1E3CC10010FD6E /* HLOrder.m */; };
 		D2BDCE191E1E3CDA0010FD6E /* HLOrderDB.m in Sources */ = {isa = PBXBuildFile; fileRef = D2BDCE181E1E3CDA0010FD6E /* HLOrderDB.m */; };
 		D2BDCE1C1E1E41F80010FD6E /* HLSession.m in Sources */ = {isa = PBXBuildFile; fileRef = D2BDCE1B1E1E41F80010FD6E /* HLSession.m */; };
+		D2C6FB1C1E49654B0037B9E6 /* HLEventCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C6FB1B1E49654B0037B9E6 /* HLEventCollectionHeaderView.m */; };
 		D2DA709E1E25CC840052930E /* HLEventSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DA709D1E25CC840052930E /* HLEventSelectViewController.m */; };
 		D2DA70A11E25CCAE0052930E /* HLEventCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DA70A01E25CCAE0052930E /* HLEventCollectionViewCell.m */; };
 		D2DA70A41E25CCDA0052930E /* HLEventDB.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DA70A31E25CCDA0052930E /* HLEventDB.m */; };
@@ -124,6 +125,8 @@
 		D2BDCE181E1E3CDA0010FD6E /* HLOrderDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLOrderDB.m; sourceTree = "<group>"; };
 		D2BDCE1A1E1E41F80010FD6E /* HLSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLSession.h; sourceTree = "<group>"; };
 		D2BDCE1B1E1E41F80010FD6E /* HLSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLSession.m; sourceTree = "<group>"; };
+		D2C6FB1A1E49654B0037B9E6 /* HLEventCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLEventCollectionHeaderView.h; sourceTree = "<group>"; };
+		D2C6FB1B1E49654B0037B9E6 /* HLEventCollectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLEventCollectionHeaderView.m; sourceTree = "<group>"; };
 		D2CECD9F1E24CDAE008FDBB8 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
 		D2DA709C1E25CC840052930E /* HLEventSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLEventSelectViewController.h; sourceTree = "<group>"; };
 		D2DA709D1E25CC840052930E /* HLEventSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLEventSelectViewController.m; sourceTree = "<group>"; };
@@ -307,6 +310,8 @@
 				D240B33C1E1F8524004A6720 /* HLOrderListTableViewCell.m */,
 				D2DA709F1E25CCAE0052930E /* HLEventCollectionViewCell.h */,
 				D2DA70A01E25CCAE0052930E /* HLEventCollectionViewCell.m */,
+				D2C6FB1A1E49654B0037B9E6 /* HLEventCollectionHeaderView.h */,
+				D2C6FB1B1E49654B0037B9E6 /* HLEventCollectionHeaderView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -580,6 +585,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2BDCE161E1E3CC10010FD6E /* HLOrder.m in Sources */,
+				D2C6FB1C1E49654B0037B9E6 /* HLEventCollectionHeaderView.m in Sources */,
 				D26E264C1E2DF328006586A1 /* HLEventEditViewController.m in Sources */,
 				D2BDCE191E1E3CDA0010FD6E /* HLOrderDB.m in Sources */,
 				D240B3461E1F8760004A6720 /* HLOrderDetailViewModel.m in Sources */,

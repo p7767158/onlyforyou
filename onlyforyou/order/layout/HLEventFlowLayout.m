@@ -18,6 +18,7 @@
         self.minimumLineSpacing = 10;
         self.minimumInteritemSpacing = 10;
         self.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+        self.headerReferenceSize = CGSizeMake(ScreenBounds.size.width, 30);
     }
     return self;
 }

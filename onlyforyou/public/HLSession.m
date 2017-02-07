@@ -86,6 +86,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(HLSession);
     _events = [[[_events rac_sequence] map:^id(NSDictionary *value) {
         return [HLEvent yy_modelWithDictionary:value];
     }] array];
+    
     return _events;
 }
 

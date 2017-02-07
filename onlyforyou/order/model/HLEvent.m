@@ -18,4 +18,25 @@
     }] array];
 }
 
++ (NSArray *)hideEvents
+{
+    return [[[[[HLEventDB sharedHLEventDB] getHideEvents] rac_sequence] map:^id(NSDictionary *dict) {
+        return [HLEvent yy_modelWithDictionary:dict];
+    }] array];
+}
+
+- (void)setHide:(BOOL)hide
+{
+    _hide = hide;
+    
+    [[HLEventDB sharedHLEventDB] updateHideOfEvent:self];
+}
+
+- (void)setRank:(NSInteger)rank
+{
+    _rank = rank;
+    
+    [[HLEventDB sharedHLEventDB] updateRankOfEvent:self];
+}
+
 @end

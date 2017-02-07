@@ -10,10 +10,12 @@
 
 @interface HLEvent : NSObject
 
+@property (nonatomic, assign) NSInteger eid;
 @property (nonatomic, copy) NSString *desc;
 @property (nonatomic, assign) NSInteger rank;
 @property (nonatomic, assign, getter=isHide) BOOL hide;
 
 + (NSArray *)events;
++ (NSArray *)hideEvents;
 
 @end
