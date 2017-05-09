@@ -16,5 +16,6 @@
 
 + (UIColor *)darkTextColor;
 + (UIColor *)redColor;
++ (UIColor *)mainColor;
 
 @end

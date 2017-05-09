@@ -30,4 +30,9 @@
     return RGBA(217, 90, 81, 1);
 }
 
++ (UIColor *)mainColor
+{
+    return [UIColor purpleColor];
+}
+
 @end

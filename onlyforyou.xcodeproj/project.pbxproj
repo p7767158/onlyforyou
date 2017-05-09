@@ -33,6 +33,7 @@
 		D2BDCE191E1E3CDA0010FD6E /* HLOrderDB.m in Sources */ = {isa = PBXBuildFile; fileRef = D2BDCE181E1E3CDA0010FD6E /* HLOrderDB.m */; };
 		D2BDCE1C1E1E41F80010FD6E /* HLSession.m in Sources */ = {isa = PBXBuildFile; fileRef = D2BDCE1B1E1E41F80010FD6E /* HLSession.m */; };
 		D2C6FB1C1E49654B0037B9E6 /* HLEventCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C6FB1B1E49654B0037B9E6 /* HLEventCollectionHeaderView.m */; };
+		D2D7A4F71E4AF408001AD84E /* HLAddOrderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D7A4F61E4AF408001AD84E /* HLAddOrderView.m */; };
 		D2DA709E1E25CC840052930E /* HLEventSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DA709D1E25CC840052930E /* HLEventSelectViewController.m */; };
 		D2DA70A11E25CCAE0052930E /* HLEventCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DA70A01E25CCAE0052930E /* HLEventCollectionViewCell.m */; };
 		D2DA70A41E25CCDA0052930E /* HLEventDB.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DA70A31E25CCDA0052930E /* HLEventDB.m */; };
@@ -128,6 +129,8 @@
 		D2C6FB1A1E49654B0037B9E6 /* HLEventCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLEventCollectionHeaderView.h; sourceTree = "<group>"; };
 		D2C6FB1B1E49654B0037B9E6 /* HLEventCollectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLEventCollectionHeaderView.m; sourceTree = "<group>"; };
 		D2CECD9F1E24CDAE008FDBB8 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
+		D2D7A4F51E4AF408001AD84E /* HLAddOrderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLAddOrderView.h; sourceTree = "<group>"; };
+		D2D7A4F61E4AF408001AD84E /* HLAddOrderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLAddOrderView.m; sourceTree = "<group>"; };
 		D2DA709C1E25CC840052930E /* HLEventSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLEventSelectViewController.h; sourceTree = "<group>"; };
 		D2DA709D1E25CC840052930E /* HLEventSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLEventSelectViewController.m; sourceTree = "<group>"; };
 		D2DA709F1E25CCAE0052930E /* HLEventCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLEventCollectionViewCell.h; sourceTree = "<group>"; };
@@ -136,6 +139,7 @@
 		D2DA70A31E25CCDA0052930E /* HLEventDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLEventDB.m; sourceTree = "<group>"; };
 		D2DA70A51E25CCF30052930E /* HLEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLEvent.h; sourceTree = "<group>"; };
 		D2DA70A61E25CCF30052930E /* HLEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLEvent.m; sourceTree = "<group>"; };
+		D2DDA7C31E5A82560000B0B7 /* onlyforyou.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = onlyforyou.entitlements; sourceTree = "<group>"; };
 		F42604EF3EADF31D7C8DACC7 /* libPods-onlyforyou.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-onlyforyou.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -241,6 +245,7 @@
 		D223A7261E13A67F00371658 /* onlyforyou */ = {
 			isa = PBXGroup;
 			children = (
+				D2DDA7C31E5A82560000B0B7 /* onlyforyou.entitlements */,
 				D2BDCE0C1E1E3CC10010FD6E /* order */,
 				D230F6171E14FD4400AB391E /* root */,
 				D230F6161E14FD3600AB391E /* public */,
@@ -312,6 +317,8 @@
 				D2DA70A01E25CCAE0052930E /* HLEventCollectionViewCell.m */,
 				D2C6FB1A1E49654B0037B9E6 /* HLEventCollectionHeaderView.h */,
 				D2C6FB1B1E49654B0037B9E6 /* HLEventCollectionHeaderView.m */,
+				D2D7A4F51E4AF408001AD84E /* HLAddOrderView.h */,
+				D2D7A4F61E4AF408001AD84E /* HLAddOrderView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -471,6 +478,11 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = V9656M7SPJ;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.SafariKeychain = {
+								enabled = 1;
+							};
+						};
 					};
 					D223A73C1E13A67F00371658 = {
 						CreatedOnToolsVersion = 8.1;
@@ -585,6 +597,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2BDCE161E1E3CC10010FD6E /* HLOrder.m in Sources */,
+				D2D7A4F71E4AF408001AD84E /* HLAddOrderView.m in Sources */,
 				D2C6FB1C1E49654B0037B9E6 /* HLEventCollectionHeaderView.m in Sources */,
 				D26E264C1E2DF328006586A1 /* HLEventEditViewController.m in Sources */,
 				D2BDCE191E1E3CDA0010FD6E /* HLOrderDB.m in Sources */,
@@ -760,6 +773,7 @@
 			baseConfigurationReference = AC1FFCC6E85EC5E7FF42E371 /* Pods-onlyforyou.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = onlyforyou/onlyforyou.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -778,6 +792,7 @@
 			baseConfigurationReference = 1FE2F2C93CC53399A10C6785 /* Pods-onlyforyou.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = onlyforyou/onlyforyou.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
